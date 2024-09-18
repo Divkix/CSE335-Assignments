@@ -2,7 +2,7 @@
 //  BmiRiskCaclulatorUITestsLaunchTests.swift
 //  BmiRiskCaclulatorUITests
 //
-//  Created by Divanshu Chauhan on 9/11/24.
+//  Created by RIDHAM SHAH on 9/11/24.
 //
 
 import XCTest
@@ -17,7 +17,6 @@ final class BmiRiskCaclulatorUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()

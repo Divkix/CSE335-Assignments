@@ -3,66 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DBEA22992C9287D50087535C /* BmiRiskCaclulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA22982C9287D50087535C /* BmiRiskCaclulatorApp.swift */; };
+		DBEA229B2C9287D50087535C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA229A2C9287D50087535C /* ContentView.swift */; };
+		DBEA229D2C9287D50087535C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA229C2C9287D50087535C /* Item.swift */; };
+		DBEA229F2C9287D60087535C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEA229E2C9287D60087535C /* Assets.xcassets */; };
+		DBEA22A22C9287D60087535C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEA22A12C9287D60087535C /* Preview Assets.xcassets */; };
+		DBEA22AC2C9287D70087535C /* BmiRiskCaclulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA22AB2C9287D70087535C /* BmiRiskCaclulatorTests.swift */; };
+		DBEA22B62C9287D70087535C /* BmiRiskCaclulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA22B52C9287D70087535C /* BmiRiskCaclulatorUITests.swift */; };
+		DBEA22B82C9287D70087535C /* BmiRiskCaclulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA22B72C9287D70087535C /* BmiRiskCaclulatorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		FD3C1E952C92347100BD08B5 /* PBXContainerItemProxy */ = {
+		DBEA22A82C9287D70087535C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FD3C1E7C2C92346E00BD08B5 /* Project object */;
+			containerPortal = DBEA228D2C9287D50087535C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FD3C1E832C92346E00BD08B5;
+			remoteGlobalIDString = DBEA22942C9287D50087535C;
 			remoteInfo = BmiRiskCaclulator;
 		};
-		FD3C1E9F2C92347100BD08B5 /* PBXContainerItemProxy */ = {
+		DBEA22B22C9287D70087535C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FD3C1E7C2C92346E00BD08B5 /* Project object */;
+			containerPortal = DBEA228D2C9287D50087535C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FD3C1E832C92346E00BD08B5;
+			remoteGlobalIDString = DBEA22942C9287D50087535C;
 			remoteInfo = BmiRiskCaclulator;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FD3C1E842C92346F00BD08B5 /* BmiRiskCaclulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BmiRiskCaclulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD3C1E942C92347100BD08B5 /* BmiRiskCaclulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BmiRiskCaclulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD3C1E9E2C92347100BD08B5 /* BmiRiskCaclulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BmiRiskCaclulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBEA22952C9287D50087535C /* BmiRiskCaclulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BmiRiskCaclulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBEA22982C9287D50087535C /* BmiRiskCaclulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiRiskCaclulatorApp.swift; sourceTree = "<group>"; };
+		DBEA229A2C9287D50087535C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DBEA229C2C9287D50087535C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DBEA229E2C9287D60087535C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBEA22A12C9287D60087535C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBEA22A72C9287D70087535C /* BmiRiskCaclulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BmiRiskCaclulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBEA22AB2C9287D70087535C /* BmiRiskCaclulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiRiskCaclulatorTests.swift; sourceTree = "<group>"; };
+		DBEA22B12C9287D70087535C /* BmiRiskCaclulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BmiRiskCaclulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBEA22B52C9287D70087535C /* BmiRiskCaclulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiRiskCaclulatorUITests.swift; sourceTree = "<group>"; };
+		DBEA22B72C9287D70087535C /* BmiRiskCaclulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiRiskCaclulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FD3C1E862C92346F00BD08B5 /* BmiRiskCaclulator */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BmiRiskCaclulator;
-			sourceTree = "<group>";
-		};
-		FD3C1E972C92347100BD08B5 /* BmiRiskCaclulatorTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BmiRiskCaclulatorTests;
-			sourceTree = "<group>";
-		};
-		FD3C1EA12C92347100BD08B5 /* BmiRiskCaclulatorUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BmiRiskCaclulatorUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		FD3C1E812C92346E00BD08B5 /* Frameworks */ = {
+		DBEA22922C9287D50087535C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD3C1E912C92347100BD08B5 /* Frameworks */ = {
+		DBEA22A42C9287D70087535C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD3C1E9B2C92347100BD08B5 /* Frameworks */ = {
+		DBEA22AE2C9287D70087535C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,157 +73,180 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FD3C1E7B2C92346E00BD08B5 = {
+		DBEA228C2C9287D50087535C = {
 			isa = PBXGroup;
 			children = (
-				FD3C1E862C92346F00BD08B5 /* BmiRiskCaclulator */,
-				FD3C1E972C92347100BD08B5 /* BmiRiskCaclulatorTests */,
-				FD3C1EA12C92347100BD08B5 /* BmiRiskCaclulatorUITests */,
-				FD3C1E852C92346F00BD08B5 /* Products */,
+				DBEA22972C9287D50087535C /* BmiRiskCaclulator */,
+				DBEA22AA2C9287D70087535C /* BmiRiskCaclulatorTests */,
+				DBEA22B42C9287D70087535C /* BmiRiskCaclulatorUITests */,
+				DBEA22962C9287D50087535C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FD3C1E852C92346F00BD08B5 /* Products */ = {
+		DBEA22962C9287D50087535C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD3C1E842C92346F00BD08B5 /* BmiRiskCaclulator.app */,
-				FD3C1E942C92347100BD08B5 /* BmiRiskCaclulatorTests.xctest */,
-				FD3C1E9E2C92347100BD08B5 /* BmiRiskCaclulatorUITests.xctest */,
+				DBEA22952C9287D50087535C /* BmiRiskCaclulator.app */,
+				DBEA22A72C9287D70087535C /* BmiRiskCaclulatorTests.xctest */,
+				DBEA22B12C9287D70087535C /* BmiRiskCaclulatorUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DBEA22972C9287D50087535C /* BmiRiskCaclulator */ = {
+			isa = PBXGroup;
+			children = (
+				DBEA22982C9287D50087535C /* BmiRiskCaclulatorApp.swift */,
+				DBEA229A2C9287D50087535C /* ContentView.swift */,
+				DBEA229C2C9287D50087535C /* Item.swift */,
+				DBEA229E2C9287D60087535C /* Assets.xcassets */,
+				DBEA22A02C9287D60087535C /* Preview Content */,
+			);
+			path = BmiRiskCaclulator;
+			sourceTree = "<group>";
+		};
+		DBEA22A02C9287D60087535C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DBEA22A12C9287D60087535C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBEA22AA2C9287D70087535C /* BmiRiskCaclulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBEA22AB2C9287D70087535C /* BmiRiskCaclulatorTests.swift */,
+			);
+			path = BmiRiskCaclulatorTests;
+			sourceTree = "<group>";
+		};
+		DBEA22B42C9287D70087535C /* BmiRiskCaclulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBEA22B52C9287D70087535C /* BmiRiskCaclulatorUITests.swift */,
+				DBEA22B72C9287D70087535C /* BmiRiskCaclulatorUITestsLaunchTests.swift */,
+			);
+			path = BmiRiskCaclulatorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD3C1E832C92346E00BD08B5 /* BmiRiskCaclulator */ = {
+		DBEA22942C9287D50087535C /* BmiRiskCaclulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD3C1EA82C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulator" */;
+			buildConfigurationList = DBEA22BB2C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulator" */;
 			buildPhases = (
-				FD3C1E802C92346E00BD08B5 /* Sources */,
-				FD3C1E812C92346E00BD08B5 /* Frameworks */,
-				FD3C1E822C92346E00BD08B5 /* Resources */,
+				DBEA22912C9287D50087535C /* Sources */,
+				DBEA22922C9287D50087535C /* Frameworks */,
+				DBEA22932C9287D50087535C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				FD3C1E862C92346F00BD08B5 /* BmiRiskCaclulator */,
 			);
 			name = BmiRiskCaclulator;
-			packageProductDependencies = (
-			);
 			productName = BmiRiskCaclulator;
-			productReference = FD3C1E842C92346F00BD08B5 /* BmiRiskCaclulator.app */;
+			productReference = DBEA22952C9287D50087535C /* BmiRiskCaclulator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FD3C1E932C92347100BD08B5 /* BmiRiskCaclulatorTests */ = {
+		DBEA22A62C9287D70087535C /* BmiRiskCaclulatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD3C1EAB2C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorTests" */;
+			buildConfigurationList = DBEA22BE2C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorTests" */;
 			buildPhases = (
-				FD3C1E902C92347100BD08B5 /* Sources */,
-				FD3C1E912C92347100BD08B5 /* Frameworks */,
-				FD3C1E922C92347100BD08B5 /* Resources */,
+				DBEA22A32C9287D70087535C /* Sources */,
+				DBEA22A42C9287D70087535C /* Frameworks */,
+				DBEA22A52C9287D70087535C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FD3C1E962C92347100BD08B5 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FD3C1E972C92347100BD08B5 /* BmiRiskCaclulatorTests */,
+				DBEA22A92C9287D70087535C /* PBXTargetDependency */,
 			);
 			name = BmiRiskCaclulatorTests;
-			packageProductDependencies = (
-			);
 			productName = BmiRiskCaclulatorTests;
-			productReference = FD3C1E942C92347100BD08B5 /* BmiRiskCaclulatorTests.xctest */;
+			productReference = DBEA22A72C9287D70087535C /* BmiRiskCaclulatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FD3C1E9D2C92347100BD08B5 /* BmiRiskCaclulatorUITests */ = {
+		DBEA22B02C9287D70087535C /* BmiRiskCaclulatorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD3C1EAE2C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorUITests" */;
+			buildConfigurationList = DBEA22C12C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorUITests" */;
 			buildPhases = (
-				FD3C1E9A2C92347100BD08B5 /* Sources */,
-				FD3C1E9B2C92347100BD08B5 /* Frameworks */,
-				FD3C1E9C2C92347100BD08B5 /* Resources */,
+				DBEA22AD2C9287D70087535C /* Sources */,
+				DBEA22AE2C9287D70087535C /* Frameworks */,
+				DBEA22AF2C9287D70087535C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FD3C1EA02C92347100BD08B5 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FD3C1EA12C92347100BD08B5 /* BmiRiskCaclulatorUITests */,
+				DBEA22B32C9287D70087535C /* PBXTargetDependency */,
 			);
 			name = BmiRiskCaclulatorUITests;
-			packageProductDependencies = (
-			);
 			productName = BmiRiskCaclulatorUITests;
-			productReference = FD3C1E9E2C92347100BD08B5 /* BmiRiskCaclulatorUITests.xctest */;
+			productReference = DBEA22B12C9287D70087535C /* BmiRiskCaclulatorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FD3C1E7C2C92346E00BD08B5 /* Project object */ = {
+		DBEA228D2C9287D50087535C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					FD3C1E832C92346E00BD08B5 = {
-						CreatedOnToolsVersion = 16.0;
+					DBEA22942C9287D50087535C = {
+						CreatedOnToolsVersion = 15.4;
 					};
-					FD3C1E932C92347100BD08B5 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = FD3C1E832C92346E00BD08B5;
+					DBEA22A62C9287D70087535C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DBEA22942C9287D50087535C;
 					};
-					FD3C1E9D2C92347100BD08B5 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = FD3C1E832C92346E00BD08B5;
+					DBEA22B02C9287D70087535C = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DBEA22942C9287D50087535C;
 					};
 				};
 			};
-			buildConfigurationList = FD3C1E7F2C92346E00BD08B5 /* Build configuration list for PBXProject "BmiRiskCaclulator" */;
+			buildConfigurationList = DBEA22902C9287D50087535C /* Build configuration list for PBXProject "BmiRiskCaclulator" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = FD3C1E7B2C92346E00BD08B5;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = FD3C1E852C92346F00BD08B5 /* Products */;
+			mainGroup = DBEA228C2C9287D50087535C;
+			productRefGroup = DBEA22962C9287D50087535C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD3C1E832C92346E00BD08B5 /* BmiRiskCaclulator */,
-				FD3C1E932C92347100BD08B5 /* BmiRiskCaclulatorTests */,
-				FD3C1E9D2C92347100BD08B5 /* BmiRiskCaclulatorUITests */,
+				DBEA22942C9287D50087535C /* BmiRiskCaclulator */,
+				DBEA22A62C9287D70087535C /* BmiRiskCaclulatorTests */,
+				DBEA22B02C9287D70087535C /* BmiRiskCaclulatorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FD3C1E822C92346E00BD08B5 /* Resources */ = {
+		DBEA22932C9287D50087535C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBEA22A22C9287D60087535C /* Preview Assets.xcassets in Resources */,
+				DBEA229F2C9287D60087535C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBEA22A52C9287D70087535C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD3C1E922C92347100BD08B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD3C1E9C2C92347100BD08B5 /* Resources */ = {
+		DBEA22AF2C9287D70087535C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,44 +256,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FD3C1E802C92346E00BD08B5 /* Sources */ = {
+		DBEA22912C9287D50087535C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEA229B2C9287D50087535C /* ContentView.swift in Sources */,
+				DBEA229D2C9287D50087535C /* Item.swift in Sources */,
+				DBEA22992C9287D50087535C /* BmiRiskCaclulatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD3C1E902C92347100BD08B5 /* Sources */ = {
+		DBEA22A32C9287D70087535C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEA22AC2C9287D70087535C /* BmiRiskCaclulatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD3C1E9A2C92347100BD08B5 /* Sources */ = {
+		DBEA22AD2C9287D70087535C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEA22B82C9287D70087535C /* BmiRiskCaclulatorUITestsLaunchTests.swift in Sources */,
+				DBEA22B62C9287D70087535C /* BmiRiskCaclulatorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FD3C1E962C92347100BD08B5 /* PBXTargetDependency */ = {
+		DBEA22A92C9287D70087535C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD3C1E832C92346E00BD08B5 /* BmiRiskCaclulator */;
-			targetProxy = FD3C1E952C92347100BD08B5 /* PBXContainerItemProxy */;
+			target = DBEA22942C9287D50087535C /* BmiRiskCaclulator */;
+			targetProxy = DBEA22A82C9287D70087535C /* PBXContainerItemProxy */;
 		};
-		FD3C1EA02C92347100BD08B5 /* PBXTargetDependency */ = {
+		DBEA22B32C9287D70087535C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD3C1E832C92346E00BD08B5 /* BmiRiskCaclulator */;
-			targetProxy = FD3C1E9F2C92347100BD08B5 /* PBXContainerItemProxy */;
+			target = DBEA22942C9287D50087535C /* BmiRiskCaclulator */;
+			targetProxy = DBEA22B22C9287D70087535C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		FD3C1EA62C92347100BD08B5 /* Debug */ = {
+		DBEA22B92C9287D70087535C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		FD3C1EA72C92347100BD08B5 /* Release */ = {
+		DBEA22BA2C9287D70087535C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,7 +418,7 @@
 			};
 			name = Release;
 		};
-		FD3C1EA92C92347100BD08B5 /* Debug */ = {
+		DBEA22BC2C9287D70087535C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -396,7 +426,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BmiRiskCaclulator/Preview Content\"";
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -404,13 +433,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -418,7 +446,7 @@
 			};
 			name = Debug;
 		};
-		FD3C1EAA2C92347100BD08B5 /* Release */ = {
+		DBEA22BD2C9287D70087535C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -426,7 +454,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BmiRiskCaclulator/Preview Content\"";
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -434,13 +461,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -448,17 +474,17 @@
 			};
 			name = Release;
 		};
-		FD3C1EAC2C92347100BD08B5 /* Debug */ = {
+		DBEA22BF2C9287D70087535C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -467,17 +493,17 @@
 			};
 			name = Debug;
 		};
-		FD3C1EAD2C92347100BD08B5 /* Release */ = {
+		DBEA22C02C9287D70087535C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -486,16 +512,15 @@
 			};
 			name = Release;
 		};
-		FD3C1EAF2C92347100BD08B5 /* Debug */ = {
+		DBEA22C22C9287D70087535C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulatorUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -504,16 +529,15 @@
 			};
 			name = Debug;
 		};
-		FD3C1EB02C92347100BD08B5 /* Release */ = {
+		DBEA22C32C9287D70087535C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3UNSDYPA3R;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.divkix.BmiRiskCaclulatorUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LoneWolf.BmiRiskCaclulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -525,43 +549,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD3C1E7F2C92346E00BD08B5 /* Build configuration list for PBXProject "BmiRiskCaclulator" */ = {
+		DBEA22902C9287D50087535C /* Build configuration list for PBXProject "BmiRiskCaclulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD3C1EA62C92347100BD08B5 /* Debug */,
-				FD3C1EA72C92347100BD08B5 /* Release */,
+				DBEA22B92C9287D70087535C /* Debug */,
+				DBEA22BA2C9287D70087535C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD3C1EA82C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulator" */ = {
+		DBEA22BB2C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD3C1EA92C92347100BD08B5 /* Debug */,
-				FD3C1EAA2C92347100BD08B5 /* Release */,
+				DBEA22BC2C9287D70087535C /* Debug */,
+				DBEA22BD2C9287D70087535C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD3C1EAB2C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorTests" */ = {
+		DBEA22BE2C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD3C1EAC2C92347100BD08B5 /* Debug */,
-				FD3C1EAD2C92347100BD08B5 /* Release */,
+				DBEA22BF2C9287D70087535C /* Debug */,
+				DBEA22C02C9287D70087535C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD3C1EAE2C92347100BD08B5 /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorUITests" */ = {
+		DBEA22C12C9287D70087535C /* Build configuration list for PBXNativeTarget "BmiRiskCaclulatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD3C1EAF2C92347100BD08B5 /* Debug */,
-				FD3C1EB02C92347100BD08B5 /* Release */,
+				DBEA22C22C9287D70087535C /* Debug */,
+				DBEA22C32C9287D70087535C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FD3C1E7C2C92346E00BD08B5 /* Project object */;
+	rootObject = DBEA228D2C9287D50087535C /* Project object */;
 }

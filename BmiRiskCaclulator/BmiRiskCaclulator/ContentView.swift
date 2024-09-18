@@ -35,6 +35,9 @@ struct ContentView: View {
             // Height Input
             HStack {
                 Text("Height (in inches): ")
+                Spacer()
+                Spacer()
+             
                 TextField(
                     "Enter Height here",
                     text: $height
@@ -44,6 +47,7 @@ struct ContentView: View {
             // Weight Input
             HStack {
                 Text("Weight (in pounds): ")
+                
                 TextField(
                     "Enter Weight here",
                     text: $weight
@@ -53,6 +57,10 @@ struct ContentView: View {
             // Waist Circumference Input
             HStack {
                 Text("Waist (in inches): ")
+                Spacer()
+                Spacer()
+                Spacer()
+                
                 TextField(
                     "Enter Waist here",
                     text: $waist
