@@ -33,7 +33,7 @@ struct ContentView: View {
 
                 // Display message if coming from the Moon or Jupiter.
                 if let comingFrom = comingFrom {
-                    Text(comingFrom)  // Show where the user is coming from.
+                    Text("Coming from the \(comingFrom)")  // Show where the user is coming from.
                         .foregroundColor(.gray)  // Gray color for the message.
                         .padding(.bottom)
                 }
@@ -41,6 +41,14 @@ struct ContentView: View {
                 // Button that navigates to the MoonView when tapped.
                 Button("Go to Moon") {
                     path.append("MoonView")  // Add MoonView to the navigation path.
+                    comingFrom = nil // Clear message when going to the Moon.
+                }
+                .padding()
+
+                // Button that navigates to the JupiterView when tapped.
+                Button("Go to Jupiter") {
+                    path.append("JupiterView")  // Add JupiterView to the navigation path.
+                    comingFrom = nil // Clear message when going to Jupiter.
                 }
                 .padding()
             }
@@ -49,9 +57,9 @@ struct ContentView: View {
             .navigationDestination(for: String.self) { view in
                 switch view {
                 case "MoonView":  // Navigate to MoonView and pass the earthWeight.
-                    MoonView(earthWeight: earthWeight, path: $path, comingFromEarth: true)
+                    MoonView(earthWeight: earthWeight, path: $path, comingFromEarth: true, onBackToEarth: { comingFrom = "Moon" })
                 case "JupiterView": // Navigate to JupiterView and pass both earthWeight and moonWeight.
-                    JupiterView(earthWeight: earthWeight, moonWeight: earthWeight / 6, path: $path)  // Weight on moon is 1/6 of earth
+                    JupiterView(earthWeight: earthWeight, moonWeight: earthWeight / 6, path: $path, onBackToMoon: { comingFrom = "Jupiter" }, onBackToEarth: { comingFrom = "Jupiter" })
                 default:
                     EmptyView()
                 }
@@ -63,9 +71,10 @@ struct ContentView: View {
 // MoonView - Represents the Moon view.
 // This view shows the user’s weight on Earth and Moon, and provides navigation to Jupiter or back to Earth.
 struct MoonView: View {
-    let earthWeight: Double  // The users weight on earth coming from eathView
+    let earthWeight: Double  // The user's weight on earth coming from EarthView.
     @Binding var path: NavigationPath  // Binding to the shared navigation path.
     var comingFromEarth: Bool // Used to track whether the user is coming directly from Earth.
+    let onBackToEarth: () -> Void  // Closure to set the message when returning to Earth.
 
     var body: some View {
         let moonWeight = earthWeight / 6  // Calculate the weight on the Moon, 1/6 of earth's weight.
@@ -75,15 +84,13 @@ struct MoonView: View {
                 .font(.largeTitle)
                 .padding(.bottom)
 
-            
             // Display earth and moon weights.
             Text("Earth Weight: \(earthWeight, specifier: "%.2f") kg")
             Text("Moon Weight: \(moonWeight, specifier: "%.2f") kg")
             Text("I feel much lighter!")
                 .padding(.bottom)
 
-            
-            // If user is not coming from earth, the they are coming from jupiter
+            // If user is not coming from Earth, then they are coming from Jupiter.
             if !comingFromEarth {
                 Text("Coming from Jupiter")
                     .foregroundColor(.gray)
@@ -98,6 +105,7 @@ struct MoonView: View {
 
             // Button to navigate back to Earth (removes the last view in the stack).
             Button("Back to Earth") {
+                onBackToEarth()  // Set the message as "Coming from the Moon" when navigating back to Earth.
                 path.removeLast()
             }
             .padding()
@@ -113,6 +121,8 @@ struct JupiterView: View {
     let earthWeight: Double
     let moonWeight: Double
     @Binding var path: NavigationPath
+    let onBackToMoon: () -> Void  // Closure to set the message when returning to the Moon.
+    let onBackToEarth: () -> Void  // Closure to set the message when returning to Earth.
 
     var body: some View {
         let jupiterWeight = earthWeight * 2.4
@@ -122,23 +132,27 @@ struct JupiterView: View {
                 .font(.largeTitle)
                 .padding(.bottom)
 
-            Text("Earth Weight: \(earthWeight, specifier: "%.2f") kg")  // The weight on Earth in 0.00 format
-            Text("Moon Weight: \(moonWeight, specifier: "%.2f") kg")  // The weight on Moon in 0.00 format, 1/6 of earth weight
-            Text("Jupiter Weight: \(jupiterWeight, specifier: "%.2f") kg")  // The weight on Jupiter in 0.00 format, 2.4 times of earth weight
-            Text("I feel heavier!")  // Put, "I feel heavier!"
+            Text("Earth Weight: \(earthWeight, specifier: "%.2f") kg")  // The weight on Earth in 0.00 format.
+            Text("Moon Weight: \(moonWeight, specifier: "%.2f") kg")  // The weight on Moon in 0.00 format, 1/6 of earth weight.
+            Text("Jupiter Weight: \(jupiterWeight, specifier: "%.2f") kg")  // The weight on Jupiter in 0.00 format, 2.4 times of earth weight.
+            Text("I feel heavier!")  // Display message about feeling heavier.
                 .padding(.bottom)
 
+            // Button to go back to Moon.
             Button("Back to Moon") {
-                path.removeLast()  // Back to moon, remove the last view from stack
+                onBackToMoon()  // Set the message as "Coming from Jupiter" when navigating back to Moon.
+                path.removeLast()  // Back to Moon, remove the last view from stack.
             }
             .padding()
 
+            // Button to go back to Earth.
             Button("Back to Earth") {
-                path.removeLast(2)  // Back to earth, remove the last 2 views from stack
+                onBackToEarth()  // Set the message as "Coming from Jupiter" when navigating back to Earth.
+                path.removeLast(2)  // Back to Earth, remove the last 2 views from stack.
             }
             .padding()
         }
-        // Title for Moon
+        // Title for Jupiter
         .navigationTitle("Jupiter")
     }
 }
