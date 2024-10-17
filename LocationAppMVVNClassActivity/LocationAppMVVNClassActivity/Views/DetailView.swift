@@ -1,17 +1,26 @@
+//
+//  DetailView.swift
+//  LocationAppMVVNClassActivity
+//
+//  Created by Divanshu Chauhan on 9/26/24.
+//
+
 import SwiftUI
 
 struct DetailView: View {
     @ObservedObject var viewModel: LocationViewModel
     @State private var city: String
     @State private var state: String
+    @State private var msgInfo: String
     @Environment(\.presentationMode) var presentationMode
     
     init(viewModel: LocationViewModel) {
         self.viewModel = viewModel
         _city = State(initialValue: viewModel.location.city)
         _state = State(initialValue: viewModel.location.state)
+        _msgInfo = State(initialValue: "")
     }
-    
+
     var body: some View {
         VStack(spacing: 30) {
             Text("Update Location")
@@ -47,7 +56,6 @@ struct DetailView: View {
                     .cornerRadius(10)
             }
             .padding(.horizontal)
-
             Spacer()
         }
         .navigationTitle("Detail View")
