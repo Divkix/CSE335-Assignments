@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "The-Notebook-One-Sheet-Wall-Poster-14-725-x-22-375_6e7c9108-06f7-4aef-b6ab-d8345f97c539.f4f5672948226524461dd82cb4386b40.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
