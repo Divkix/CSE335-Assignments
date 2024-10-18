@@ -1,10 +1,3 @@
-//
-//  AddMovieNew.swift
-//  TableViewLab5
-//
-//  Created by Divanshu Chauhan on 10/17/24.
-//
-
 import SwiftUI
 
 struct AddMovieView: View {
@@ -13,6 +6,11 @@ struct AddMovieView: View {
     @State private var name = ""
     @State private var genre = ""
     @State private var description = ""
+
+    // Computed property to check if all fields are filled
+    private var isFormValid: Bool {
+        !name.isEmpty && !genre.isEmpty && !description.isEmpty
+    }
 
     var body: some View {
         NavigationStack {
@@ -35,6 +33,7 @@ struct AddMovieView: View {
                         viewModel.addMovie(name: name, genre: genre, description: description)
                         isPresented = false
                     }
+                    .disabled(!isFormValid) // Disable the button if the form is not valid
                 }
             }
         }
