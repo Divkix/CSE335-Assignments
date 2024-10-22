@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct HealthStatusView: View {
-    @StateObject var viewModel = ActivityViewModel()
-    
+    @ObservedObject var viewModel: ActivityViewModel
+
     var body: some View {
-        VStack {
-            Text(viewModel.healthStatus)
-                .font(.title)
-                .padding()
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [.white, Color.blue.opacity(0.1)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            VStack {
+                Spacer()
+
+                Text(viewModel.healthStatus)
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                    .padding()
+                    .background(Color.white.opacity(0.8))
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+
+                Spacer()
+            }
+            .navigationTitle("Health Status")
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .navigationTitle("Health Status")
     }
 }
-

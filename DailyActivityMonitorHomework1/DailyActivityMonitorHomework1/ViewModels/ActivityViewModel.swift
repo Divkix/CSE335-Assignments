@@ -8,43 +8,64 @@
 import Foundation
 import SwiftUI
 
-class ActivityViewModel: ObservableObject {
-    @Published var activities: [Activity] = []
-    
-    var dateFormatter: DateFormatter {
+struct UserActivity: Identifiable {
+    let id = UUID()
+    let date: Date
+    let walkingMinutes: Int
+    let runningMinutes: Int
+    let sleepingHours: Int
+    let foodCalories: Int
+
+    var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        return formatter
+        return formatter.string(from: date)
     }
-    
-    func insertActivity(walking: Int, running: Int, sleeping: Int, food: Int) {
-        let newActivity = Activity(date: Date(), walkingMinutes: walking, runningMinutes: running, sleepingHours: sleeping, foodCalories: food)
+}
+
+class ActivityViewModel: ObservableObject {
+    @Published var activities: [UserActivity] = []
+
+    func insertActivity(date: Date, walking: Int, running: Int, sleeping: Int, food: Int) {
+        let newActivity = UserActivity(
+            date: date,
+            walkingMinutes: walking,
+            runningMinutes: running,
+            sleepingHours: sleeping,
+            foodCalories: food
+        )
         if activities.count >= 7 {
             activities.removeFirst()
         }
         activities.append(newActivity)
+        // Sort activities by date
+        activities.sort { $0.date < $1.date }
     }
-    
+
     func clearData() {
         activities.removeAll()
     }
-    
+
     var healthStatus: String {
-        let totalCaloriesBurned = activities.reduce(0) { result, activity in
-            result + (activity.walkingMinutes / 5 * 25) + (activity.runningMinutes / 5 * 50)
+        let totalCaloriesBurned = activities.reduce(0.0) { result, activity in
+            let walkingCalories = Double(activity.walkingMinutes) / 5.0 * 25.0
+            let runningCalories = Double(activity.runningMinutes) / 5.0 * 50.0
+            return result + walkingCalories + runningCalories
         }
-        let totalCaloriesIntake = activities.reduce(0) { result, activity in
-            result + activity.foodCalories
+
+        let totalCaloriesIntake = activities.reduce(0.0) { result, activity in
+            result + Double(activity.foodCalories)
         }
-        let averageCaloriesBurned = totalCaloriesBurned / max(activities.count, 1)
-        let averageCaloriesIntake = totalCaloriesIntake / max(activities.count, 1)
-        
-        let recommendedCaloryIntake = 2250
-        let caloriesDiff = Double(averageCaloriesIntake) - Double(averageCaloriesBurned + recommendedCaloryIntake)
-        
-        if caloriesDiff > 0.1 * Double(recommendedCaloryIntake) {
+
+        let averageCaloriesBurned = totalCaloriesBurned / max(Double(activities.count), 1.0)
+        let averageCaloriesIntake = totalCaloriesIntake / max(Double(activities.count), 1.0)
+
+        let recommendedCalorieIntake = 2250.0
+        let caloriesDiff = averageCaloriesIntake - (averageCaloriesBurned + recommendedCalorieIntake)
+
+        if caloriesDiff > 0.1 * recommendedCalorieIntake {
             return "You are gaining weight!"
-        } else if abs(caloriesDiff) <= 0.1 * Double(recommendedCaloryIntake) {
+        } else if abs(caloriesDiff) <= 0.1 * recommendedCalorieIntake {
             return "You have a healthy lifestyle!"
         } else {
             return "You are eating less!"
