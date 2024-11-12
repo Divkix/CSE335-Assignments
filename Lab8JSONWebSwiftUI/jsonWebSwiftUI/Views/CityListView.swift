@@ -25,7 +25,7 @@ struct CityListView: View {
             }
             .navigationTitle("Cities")
             .onAppear {
-                viewModel.fetchCities(north: 49.1, south: 48.5, east: 2.9, west: 2.2) // Co-ordinates for Paris
+                viewModel.fetchCities(north: 49.1, south: 48.5, east: 2.9, west: 2.2)
             }
         }
     }

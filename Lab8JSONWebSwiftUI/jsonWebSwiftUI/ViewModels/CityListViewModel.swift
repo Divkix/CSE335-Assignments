@@ -13,7 +13,7 @@ class CityListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func fetchCities(north: Double, south: Double, east: Double, west: Double) {
-        let username = "divkix" // Replace with your username
+        let username = "divkix"
         let urlString = "http://api.geonames.org/citiesJSON?north=\(north)&south=\(south)&east=\(east)&west=\(west)&maxRows=10&username=\(username)"
         
         guard let url = URL(string: urlString) else {
@@ -26,7 +26,7 @@ class CityListViewModel: ObservableObject {
                 guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                     throw URLError(.badServerResponse)
                 }
-                print("Raw JSON:", String(data: data, encoding: .utf8) ?? "No data") // Debugging output
+                print("Raw JSON:", String(data: data, encoding: .utf8) ?? "No data") // Output to debug
                 return data
             }
             .decode(type: GeonamesResponse.self, decoder: JSONDecoder())
@@ -35,7 +35,7 @@ class CityListViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] fetchedCities in
                 self?.cities = fetchedCities
-                print("Cities fetched:", fetchedCities) // Should display the list of cities
+                print("Cities fetched:", fetchedCities)
             }
             .store(in: &cancellables)
     }

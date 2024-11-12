@@ -8,7 +8,7 @@
 import Foundation
 
 struct City: Identifiable, Codable {
-    var id = UUID() // Unique identifier for SwiftUI list compatibility
+    var id = UUID()
     let geonameId: Int
     let name: String
     let countrycode: String
