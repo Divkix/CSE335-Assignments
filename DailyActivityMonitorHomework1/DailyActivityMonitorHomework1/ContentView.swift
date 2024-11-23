@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ActivityViewModel()
-    
+    @Environment(\.managedObjectContext) private var viewContext
+    @StateObject var viewModel: ActivityViewModel
+
+    init() {
+        let context = PersistenceController.shared.container.viewContext
+        _viewModel = StateObject(wrappedValue: ActivityViewModel(context: context))
+    }
+
     var body: some View {
         NavigationView {
             HomeView(viewModel: viewModel)

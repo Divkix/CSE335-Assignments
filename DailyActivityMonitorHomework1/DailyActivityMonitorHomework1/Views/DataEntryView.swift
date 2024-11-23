@@ -1,8 +1,8 @@
 //
 //  DataEntryView.swift
-//  DailyActivityMonitorHomework1
+//  DailyActivityMonitorHomework2
 //
-//  Created by Divanshu Chauhan on 10/21/24.
+//  Created by Your Name on 10/21/24.
 //
 
 import SwiftUI
@@ -36,18 +36,18 @@ struct DataEntryView: View {
                     .foregroundColor(.blue)
                     .padding(.bottom, 20)
                 
-                // Date Picker with Compact Style
+                // Date Picker
                 DatePicker(
                     "Select Date",
                     selection: $selectedDate,
-                    in: ...Date(), // Restrict to past and present dates
+                    in: ...Date(),
                     displayedComponents: .date
                 )
                 .datePickerStyle(CompactDatePickerStyle())
                 .padding(.horizontal)
-                .labelsHidden() // Hide the label to save space
+                .labelsHidden()
                 
-                // Custom Input Fields with Validation
+                // Input Fields
                 Group {
                     CustomNumericInputField(
                         iconName: "figure.walk",
@@ -126,7 +126,7 @@ struct DataEntryView: View {
         }
     }
     
-    // Function to validate inputs
+    // Validation Function
     func validateInputs() -> Bool {
         if walkingMinutes.isEmpty || runningMinutes.isEmpty || sleepingHours.isEmpty || foodCalories.isEmpty {
             alertMessage = "Please fill in all fields."
@@ -135,7 +135,7 @@ struct DataEntryView: View {
         return true
     }
     
-    // Function to reset input fields
+    // Reset Fields Function
     func resetFields() {
         walkingMinutes = ""
         runningMinutes = ""
@@ -145,7 +145,6 @@ struct DataEntryView: View {
     }
 }
 
-// CustomNumericInputField remains the same as before
 struct CustomNumericInputField: View {
     let iconName: String
     let placeholder: String

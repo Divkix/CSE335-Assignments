@@ -1,8 +1,8 @@
 //
 //  HomeView.swift
-//  DailyActivityMonitorHomework1
+//  DailyActivityMonitorHomework2
 //
-//  Created by Divanshu Chauhan on 10/21/24.
+//  Created by Your Name on 10/21/24.
 //
 
 import SwiftUI
@@ -17,10 +17,10 @@ struct HomeView: View {
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .ignoresSafeArea() // Extend gradient to full screen
+            .ignoresSafeArea()
 
             VStack(spacing: 20) {
-                Spacer() // Push content to center vertically
+                Spacer()
 
                 NavigationLink(destination: DataEntryView(viewModel: viewModel)) {
                     HStack {
@@ -68,34 +68,11 @@ struct HomeView: View {
                     .padding(.horizontal)
                 }
 
-                NavigationLink(destination: HealthStatusView(viewModel: viewModel)) {
-                    HStack {
-                        Image(systemName: "heart.fill")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        Text("How am I Doing?")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        LinearGradient(
-                            gradient: Gradient(colors: [.pink, .red]),
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .cornerRadius(15)
-                    .shadow(radius: 5)
-                    .padding(.horizontal)
-                }
-
-                Spacer() // Push content to center vertically
+                Spacer()
             }
             .navigationTitle("Daily Activity Monitoring System")
             .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure VStack fills the space
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
