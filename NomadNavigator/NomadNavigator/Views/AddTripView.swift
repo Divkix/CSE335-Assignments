@@ -1,3 +1,10 @@
+//
+//  AddTripView.swift
+//  NomadNavigator
+//
+//  Created by Divanshu Chauhan on 11/30/24.
+//
+
 import SwiftUI
 import MapKit
 
@@ -8,6 +15,7 @@ struct AddTripView: View {
     @State private var detailedLocation = ""
     @StateObject private var searchCompleterVM = SearchCompleterViewModel()  // Use the search completer
     @State private var showSearchResults = false  // Boolean to control showing search results
+    @State private var showAlert = false  // State for showing an alert for invalid date
 
     var onSave: (Trip) -> Void
 
@@ -74,14 +82,26 @@ struct AddTripView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        if !location.isEmpty {
-                            let newTrip = Trip(startDate: startDate, endDate: endDate, location: location, detailedLocation: detailedLocation)
-                            onSave(newTrip)
-                            presentationMode.wrappedValue.dismiss()  // Dismiss view after saving
+                        if endDate >= startDate {
+                            if !location.isEmpty {
+                                let newTrip = Trip(startDate: startDate, endDate: endDate, location: location, detailedLocation: detailedLocation)
+                                onSave(newTrip)
+                                presentationMode.wrappedValue.dismiss()  // Dismiss view after saving
+                            }
+                        } else {
+                            // Show alert if the end date is before the start date
+                            showAlert = true
                         }
                     }
                     .disabled(location.isEmpty)
                 }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Invalid Date Selection"),
+                    message: Text("End date cannot be before the start date. Please select valid dates."),
+                    dismissButton: .default(Text("OK"))
+                )
             }
         }
     }

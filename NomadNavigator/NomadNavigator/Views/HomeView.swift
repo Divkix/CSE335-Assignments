@@ -1,3 +1,10 @@
+//
+//  HomeView.swift
+//  NomadNavigator
+//
+//  Created by Divanshu Chauhan on 11/30/24.
+//
+
 import SwiftUI
 import MapKit
 
