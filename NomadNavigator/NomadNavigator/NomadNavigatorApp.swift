@@ -25,7 +25,9 @@ struct NomadNavigatorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationView {
+                HomeView()
+            }
         }
         .modelContainer(sharedModelContainer)
     }
