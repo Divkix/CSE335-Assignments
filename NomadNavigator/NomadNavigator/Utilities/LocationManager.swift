@@ -15,13 +15,13 @@ class LocationManager: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
     private var lastKnownLocation: CLLocation?
     private let significantDistance: CLLocationDistance = 40233.6 // 25 miles in meters
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     }
-
+    
     func requestPermission() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -41,7 +41,7 @@ extension LocationManager: CLLocationManagerDelegate {
             break
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         DispatchQueue.main.async {
@@ -52,7 +52,7 @@ extension LocationManager: CLLocationManagerDelegate {
             )
         }
     }
-
+    
     private func incrementVisitCount(for location: CLLocation) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { placemarks, _ in

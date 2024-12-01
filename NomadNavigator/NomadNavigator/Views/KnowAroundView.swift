@@ -9,9 +9,15 @@ import SwiftUI
 import MapKit
 
 struct KnowAroundView: View {
-    @StateObject private var viewModel = KnowAroundViewModel()
+    @StateObject private var viewModel: KnowAroundViewModel
     @State private var selectedPlace: PlaceOfInterest?
-
+    
+    // Adjust the initializer to make 'place' optional
+    init(place: Place? = nil) {
+        _viewModel = StateObject(wrappedValue: KnowAroundViewModel(coordinate: place?.coordinate))
+    }
+    
+    
     var body: some View {
         VStack {
             // Category Buttons
@@ -33,7 +39,7 @@ struct KnowAroundView: View {
                 }
                 .padding(.horizontal)
             }
-
+            
             // Map View
             Map(coordinateRegion: $viewModel.userRegion, annotationItems: viewModel.places) { place in
                 MapAnnotation(coordinate: place.coordinate) {
@@ -58,7 +64,7 @@ struct KnowAroundView: View {
                     viewModel.fetchNearbyPlaces(category: nil)
                 }
             }
-
+            
             // List of Places
             List(viewModel.places) { place in
                 VStack(alignment: .leading) {
@@ -86,7 +92,5 @@ struct KnowAroundView: View {
 }
 
 #Preview {
-    KnowAroundView()
-        .modelContainer(for: Item.self, inMemory: true)
+    KnowAroundView(place: Place(coordinate: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)))
 }
-

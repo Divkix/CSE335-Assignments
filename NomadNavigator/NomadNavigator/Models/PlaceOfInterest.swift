@@ -17,7 +17,7 @@ struct PlaceOfInterest: Identifiable {
     let category: MKPointOfInterestCategory?
     let phoneNumber: String?
     let url: URL?
-
+    
     var categoryName: String? {
         guard let category = category else { return nil }
         switch category {
@@ -51,7 +51,7 @@ struct PlaceOfInterest: Identifiable {
             return category.rawValue.replacingOccurrences(of: "MKPOICategory", with: "")
         }
     }
-
+    
     init(mapItem: MKMapItem) {
         self.name = mapItem.name ?? "Unknown"
         self.subtitle = mapItem.placemark.title ?? ""

@@ -20,75 +20,84 @@ class KnowAroundViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     @Published var places: [PlaceOfInterest] = []
     @Published var userRegion: MKCoordinateRegion
     @Published var selectedCategory: POICategory?
-    private var locationManager = CLLocationManager()
+    
     private var userLocation: CLLocationCoordinate2D?
-
+    private let locationManager = CLLocationManager() // Added
+    
     let allCategories: [POICategory] = [
         POICategory(category: nil, displayName: "All Categories"),
         POICategory(category: .amusementPark, displayName: "Amusement Park"),
-        POICategory(category: MKPointOfInterestCategory.aquarium, displayName: "Aquarium"),
-        POICategory(category: MKPointOfInterestCategory.beach, displayName: "Beach"),
-        POICategory(category: MKPointOfInterestCategory.brewery, displayName: "Brewery"),
-        POICategory(category: MKPointOfInterestCategory.campground, displayName: "Campground"),
-        POICategory(category: MKPointOfInterestCategory.museum, displayName: "Museum"),
-        POICategory(category: MKPointOfInterestCategory.hiking, displayName: "Hiking"),
-        POICategory(category: MKPointOfInterestCategory.golf, displayName: "Golf"),
-        POICategory(category: MKPointOfInterestCategory.bakery, displayName: "Bakery"),
-        POICategory(category: MKPointOfInterestCategory.castle, displayName: "Castle"),
-        POICategory(category: MKPointOfInterestCategory.fairground, displayName: "Fairground"),
-        POICategory(category: MKPointOfInterestCategory.nationalPark, displayName: "National Park"),
-        POICategory(category: MKPointOfInterestCategory.park, displayName: "Park"),
-        POICategory(category: MKPointOfInterestCategory.restaurant, displayName: "Restaurant"),
-        POICategory(category: MKPointOfInterestCategory.stadium, displayName: "Stadium"),
-        POICategory(category: MKPointOfInterestCategory.theater, displayName: "Theater"),
-        POICategory(category: MKPointOfInterestCategory.winery, displayName: "Winery"),
-        POICategory(category: MKPointOfInterestCategory.zoo, displayName: "Zoo")
+        POICategory(category: .aquarium, displayName: "Aquarium"),
+        POICategory(category: .beach, displayName: "Beach"),
+        POICategory(category: .brewery, displayName: "Brewery"),
+        POICategory(category: .campground, displayName: "Campground"),
+        POICategory(category: .museum, displayName: "Museum"),
+        POICategory(category: .hiking, displayName: "Hiking"),
+        POICategory(category: .golf, displayName: "Golf Course"),
+        POICategory(category: .bakery, displayName: "Bakery"),
+        POICategory(category: .castle, displayName: "Castle"),
+        POICategory(category: .fairground, displayName: "Fairground"),
+        POICategory(category: .nationalPark, displayName: "National Park"),
+        POICategory(category: .park, displayName: "Park"),
+        POICategory(category: .restaurant, displayName: "Restaurant"),
+        POICategory(category: .stadium, displayName: "Stadium"),
+        POICategory(category: .theater, displayName: "Theater"),
+        POICategory(category: .winery, displayName: "Winery"),
+        POICategory(category: .zoo, displayName: "Zoo")
     ]
-
-
-    override init() {
-        self.userRegion = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-            latitudinalMeters: 5000,
-            longitudinalMeters: 5000
-        )
+    
+    init(coordinate: CLLocationCoordinate2D? = nil) {
+        if let coordinate = coordinate {
+            self.userLocation = coordinate
+            self.userRegion = MKCoordinateRegion(
+                center: coordinate,
+                latitudinalMeters: 5000,
+                longitudinalMeters: 5000
+            )
+        } else {
+            // Initialize userRegion with a default coordinate
+            self.userRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+                latitudinalMeters: 5000,
+                longitudinalMeters: 5000
+            )
+            // Initialize userLocation as nil explicitly (optional, since it's already nil by default)
+            self.userLocation = nil
+        }
+        
+        // Call super.init() before using self
         super.init()
-        locationManager.delegate = self
+        
+        if coordinate == nil {
+            // Now it's safe to use self
+            locationManager.delegate = self
+            requestLocationAccess()
+        }
+        
+        if userLocation != nil {
+            fetchNearbyPlaces(category: selectedCategory?.category)
+        }
     }
-
+    
+    
     func requestLocationAccess() {
         locationManager.requestWhenInUseAuthorization()
     }
-
+    
     func fetchNearbyPlaces(category: MKPointOfInterestCategory? = nil) {
-        guard let userLocation = userLocation else { return }
-
+        guard let userLocation = userLocation,
+              !userLocation.latitude.isNaN,
+              !userLocation.longitude.isNaN else { return }
+        
         let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 3218, longitudinalMeters: 3218)
         let request = MKLocalPointsOfInterestRequest(coordinateRegion: region)
-
+        
         if let category = category {
             request.pointOfInterestFilter = MKPointOfInterestFilter(including: [category])
         } else {
-            // Using the predefined list of categories instead of allCategories
-            let allCategories: [MKPointOfInterestCategory] = [
-                .amusementPark,
-                .aquarium,
-                .beach,
-                .brewery,
-                .campground,
-                .museum,
-                .nationalPark,
-                .park,
-                .restaurant,
-                .stadium,
-                .theater,
-                .winery,
-                .zoo
-            ]
-
-            request.pointOfInterestFilter = MKPointOfInterestFilter(including: allCategories)
+            request.pointOfInterestFilter = nil // Include all categories
         }
-
+        
         let search = MKLocalSearch(request: request)
         search.start { response, error in
             DispatchQueue.main.async {
@@ -101,7 +110,7 @@ class KnowAroundViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
             }
         }
     }
-
+    
     // CLLocationManagerDelegate Methods
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -116,7 +125,7 @@ class KnowAroundViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
             break
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         if userLocation == nil {
@@ -127,9 +136,8 @@ class KnowAroundViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
             fetchNearbyPlaces(category: selectedCategory?.category)
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to get user location: \(error.localizedDescription)")
     }
 }
-

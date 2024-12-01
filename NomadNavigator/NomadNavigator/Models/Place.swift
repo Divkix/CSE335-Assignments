@@ -7,9 +7,10 @@
 
 
 import Foundation
-import CoreLocation
+import MapKit
 
 struct Place: Identifiable {
     let id = UUID()
-    let coordinate: CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D
 }
+
