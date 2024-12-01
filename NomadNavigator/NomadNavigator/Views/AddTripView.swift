@@ -7,9 +7,10 @@ struct AddTripView: View {
     @State private var location = ""
     @State private var detailedLocation = ""
     @StateObject private var searchCompleterVM = SearchCompleterViewModel()  // Use the search completer
-    
+    @State private var showSearchResults = false  // Boolean to control showing search results
+
     var onSave: (Trip) -> Void
-    
+
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -19,12 +20,22 @@ struct AddTripView: View {
                     TextField("Enter trip location", text: $location)
 
                     // Search bar for detailed location with autocomplete
-                    TextField("Enter detailed address", text: $searchCompleterVM.queryFragment)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.vertical, 5)
-                    
+                    TextField("Enter detailed address", text: $searchCompleterVM.queryFragment, onEditingChanged: { editing in
+                        showSearchResults = editing && !searchCompleterVM.queryFragment.isEmpty
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.vertical, 5)
+                    .onChange(of: searchCompleterVM.queryFragment) { newValue in
+                        if !newValue.isEmpty {
+                            detailedLocation = newValue
+                            showSearchResults = true
+                        } else {
+                            showSearchResults = false
+                        }
+                    }
+
                     // Display the search results below the TextField using ScrollView and VStack
-                    if !searchCompleterVM.searchResults.isEmpty {
+                    if showSearchResults && !searchCompleterVM.searchResults.isEmpty {
                         ScrollView {
                             VStack(alignment: .leading) {
                                 ForEach(searchCompleterVM.searchResults, id: \.self) { result in
@@ -48,7 +59,7 @@ struct AddTripView: View {
                         .frame(maxHeight: 150)  // Restrict list height to prevent layout issues
                     }
                 }
-                
+
                 Section(header: Text("Dates")) {
                     DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
                     DatePicker("End Date", selection: $endDate, displayedComponents: .date)
@@ -74,11 +85,11 @@ struct AddTripView: View {
             }
         }
     }
-    
+
     // Helper method to handle selection of a search result
     private func selectSearchResult(_ result: MKLocalSearchCompletion) {
         detailedLocation = "\(result.title), \(result.subtitle)"
-        searchCompleterVM.queryFragment = ""  // Clear the search query after selection
-        searchCompleterVM.searchResults = []  // Clear the search results to prevent further UI conflict
+        searchCompleterVM.queryFragment = detailedLocation  // Set query fragment to keep consistency
+        showSearchResults = false  // Dismiss search results after selection
     }
 }
